@@ -1009,3 +1009,808 @@ h1 {
     min-height: 52px;
   }
 }
+
+/* Limor Benjamin landing page */
+.limor-page {
+  --limor-ink: #24151f;
+  --limor-plum: #3b1d34;
+  --limor-plum-soft: #513045;
+  --limor-pink: #df6a91;
+  --limor-coral: #f07869;
+  --limor-mint: #8ed9c4;
+  --limor-cream: #fff7ee;
+  --limor-paper: #fbebef;
+  --limor-lilac: #f2e6ff;
+  --limor-muted: rgba(36, 21, 31, 0.68);
+  overflow: hidden;
+  background: var(--limor-cream);
+  color: var(--limor-ink);
+}
+
+.limor-page h1,
+.limor-page h2,
+.limor-page h3 {
+  font-family:
+    "Heebo",
+    "Assistant",
+    Arial,
+    sans-serif;
+}
+
+.limor-hero {
+  position: relative;
+  min-height: 100svh;
+  padding: 28px clamp(18px, 4vw, 56px) 68px;
+  background:
+    radial-gradient(circle at 18% 14%, rgba(142, 217, 196, 0.42), transparent 26%),
+    radial-gradient(circle at 82% 8%, rgba(223, 106, 145, 0.35), transparent 28%),
+    linear-gradient(180deg, #fff7ee 0%, #fde8ee 58%, #fff7ee 100%);
+}
+
+.limor-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(59, 29, 52, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 29, 52, 0.032) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(180deg, black 0%, transparent 82%);
+}
+
+.limor-nav {
+  position: relative;
+  z-index: 2;
+  width: min(1120px, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 0 auto;
+}
+
+.limor-brand,
+.limor-nav-cta,
+.limor-hero-main-cta,
+.limor-hero-secondary,
+.limor-final-button,
+.limor-floating-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.limor-brand {
+  color: var(--limor-plum);
+  font-size: 1.08rem;
+  font-weight: 900;
+}
+
+.limor-nav-links {
+  display: flex;
+  gap: clamp(14px, 3vw, 28px);
+  color: rgba(36, 21, 31, 0.62);
+  font-weight: 800;
+}
+
+.limor-nav-links a,
+.limor-nav-cta,
+.limor-hero-main-cta,
+.limor-hero-secondary,
+.limor-final-button,
+.limor-floating-cta {
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease,
+    color 180ms ease;
+}
+
+.limor-nav-links a:hover {
+  color: var(--limor-pink);
+}
+
+.limor-nav-cta,
+.limor-hero-secondary {
+  min-height: 44px;
+  border: 1px solid rgba(59, 29, 52, 0.14);
+  border-radius: 999px;
+  padding: 0 17px;
+  background: rgba(255, 255, 255, 0.54);
+  color: var(--limor-plum);
+  font-weight: 900;
+  box-shadow: 0 12px 28px rgba(59, 29, 52, 0.08);
+}
+
+.limor-nav-cta:hover,
+.limor-hero-main-cta:hover,
+.limor-hero-secondary:hover,
+.limor-final-button:hover,
+.limor-floating-cta:hover {
+  animation: none;
+  transform: translateY(-3px);
+}
+
+.limor-hero-inner {
+  position: relative;
+  z-index: 1;
+  width: min(860px, 100%);
+  margin: 64px auto 0;
+  text-align: center;
+}
+
+.limor-pill,
+.limor-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid rgba(223, 106, 145, 0.42);
+  border-radius: 999px;
+  padding: 8px 15px;
+  background: rgba(255, 255, 255, 0.52);
+  color: var(--limor-pink);
+  font-size: 0.92rem;
+  font-weight: 900;
+  box-shadow: 0 10px 26px rgba(223, 106, 145, 0.08);
+}
+
+.limor-label.dark {
+  color: var(--limor-plum);
+  border-color: rgba(59, 29, 52, 0.16);
+}
+
+.limor-page h1 {
+  max-width: 900px;
+  margin: 26px auto 0;
+  color: var(--limor-plum);
+  font-size: clamp(3rem, 7.2vw, 6.2rem);
+  font-weight: 900;
+  line-height: 0.98;
+}
+
+.limor-subtitle {
+  max-width: 730px;
+  margin: 22px auto 0;
+  color: var(--limor-muted);
+  font-size: clamp(1.12rem, 2vw, 1.35rem);
+  font-weight: 800;
+  line-height: 1.75;
+}
+
+.limor-hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.limor-hero-main-cta {
+  min-height: 52px;
+  border-radius: 999px;
+  padding: 0 24px;
+  background: linear-gradient(135deg, var(--limor-pink), var(--limor-coral));
+  color: white;
+  font-weight: 900;
+  box-shadow: 0 18px 34px rgba(223, 106, 145, 0.26);
+  animation: limorButtonLift 2.9s ease-in-out infinite;
+}
+
+.limor-hero-main-cta:hover {
+  box-shadow: 0 24px 44px rgba(223, 106, 145, 0.34);
+}
+
+.limor-hero-secondary {
+  min-height: 52px;
+  padding-inline: 22px;
+  background: rgba(255, 255, 255, 0.64);
+}
+
+.limor-video {
+  width: min(760px, 100%);
+  margin: 36px auto 0;
+}
+
+.limor-video-strip {
+  position: relative;
+  z-index: 2;
+  width: min(620px, calc(100% - 28px));
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 auto -16px;
+  border-radius: 18px 18px 0 0;
+  background: linear-gradient(135deg, var(--limor-pink), var(--limor-coral));
+  color: white;
+  font-weight: 900;
+  box-shadow: 0 14px 28px rgba(223, 106, 145, 0.2);
+}
+
+.limor-video-frame {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(223, 106, 145, 0.44);
+  border-radius: 24px;
+  background: var(--limor-plum);
+  box-shadow:
+    0 24px 58px rgba(59, 29, 52, 0.18),
+    0 0 0 8px rgba(255, 255, 255, 0.34);
+  aspect-ratio: 16 / 9;
+}
+
+.limor-video-frame iframe,
+.limor-video-placeholder {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.limor-video-placeholder {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 14px;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(142, 217, 196, 0.34), transparent 30%),
+    linear-gradient(135deg, rgba(223, 106, 145, 0.28), rgba(255, 247, 238, 0.1)),
+    var(--limor-plum);
+  color: white;
+  text-align: center;
+}
+
+.limor-video-placeholder strong {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.limor-video-placeholder span {
+  max-width: 500px;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.65;
+  font-weight: 750;
+}
+
+.limor-play {
+  width: 78px;
+  height: 78px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--limor-pink), var(--limor-coral));
+  color: white;
+  box-shadow: 0 18px 34px rgba(223, 106, 145, 0.28);
+  animation: limorPulse 2.2s ease-in-out infinite;
+}
+
+@keyframes limorPulse {
+  0%,
+  100% {
+    box-shadow:
+      0 18px 34px rgba(223, 106, 145, 0.28),
+      0 0 0 0 rgba(223, 106, 145, 0.28);
+  }
+  50% {
+    box-shadow:
+      0 18px 34px rgba(223, 106, 145, 0.28),
+      0 0 0 16px rgba(223, 106, 145, 0);
+  }
+}
+
+.limor-proof {
+  width: min(820px, 100%);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 24px auto 0;
+}
+
+.limor-proof span {
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid rgba(59, 29, 52, 0.11);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.58);
+  color: var(--limor-plum);
+  font-size: 0.94rem;
+  font-weight: 900;
+  box-shadow: 0 10px 26px rgba(59, 29, 52, 0.06);
+  transition:
+    transform 180ms ease,
+    background 180ms ease;
+}
+
+.limor-proof span:hover {
+  transform: translateY(-3px);
+  background: white;
+}
+
+.limor-proof svg {
+  color: var(--limor-pink);
+}
+
+.limor-contact-section {
+  padding: 0 clamp(18px, 4vw, 56px) clamp(76px, 10vw, 116px);
+  background: linear-gradient(180deg, var(--limor-cream), var(--limor-paper));
+}
+
+.limor-contact-card {
+  width: min(760px, 100%);
+  margin: 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.68);
+  border-radius: 24px;
+  padding: clamp(24px, 4vw, 44px);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.7), transparent 38%),
+    rgba(255, 255, 255, 0.74);
+  color: var(--limor-ink);
+  text-align: center;
+  box-shadow: 0 28px 74px rgba(59, 29, 52, 0.14);
+  backdrop-filter: blur(16px);
+}
+
+.limor-contact-card h2,
+.limor-copy h2,
+.limor-final h2 {
+  margin-top: 16px;
+  color: var(--limor-plum);
+  font-size: clamp(2.1rem, 5vw, 4.35rem);
+  line-height: 1.05;
+}
+
+.limor-contact-card p,
+.limor-copy p {
+  max-width: 720px;
+  margin: 18px auto 0;
+  color: var(--limor-muted);
+  font-size: clamp(1.02rem, 2vw, 1.18rem);
+  font-weight: 750;
+  line-height: 1.78;
+}
+
+.limor-page .contact-form {
+  margin-top: 30px;
+}
+
+.limor-page .contact-form input,
+.limor-page .contact-form textarea {
+  border-color: rgba(59, 29, 52, 0.16);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.limor-page .contact-form input:focus,
+.limor-page .contact-form textarea:focus {
+  border-color: var(--limor-pink);
+  box-shadow: 0 0 0 4px rgba(223, 106, 145, 0.15);
+}
+
+.limor-page .primary-button {
+  background: linear-gradient(135deg, var(--limor-pink), var(--limor-coral));
+  box-shadow: 0 16px 34px rgba(223, 106, 145, 0.24);
+  animation: limorButtonLift 3.1s ease-in-out infinite;
+}
+
+.limor-empathy-section,
+.limor-included-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.94fr) minmax(320px, 1fr);
+  gap: clamp(32px, 7vw, 96px);
+  align-items: center;
+  padding: clamp(76px, 11vw, 142px) clamp(18px, 4vw, 56px);
+  background: var(--limor-plum);
+  color: white;
+}
+
+.limor-copy {
+  max-width: 780px;
+}
+
+.limor-copy.center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.limor-empathy-section .limor-label,
+.limor-included-section .limor-label,
+.limor-testimonials-section .limor-label {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #ffdce7;
+}
+
+.limor-empathy-section .limor-copy h2,
+.limor-included-section .limor-copy h2,
+.limor-testimonials-section .limor-copy h2,
+.limor-final h2 {
+  color: white;
+}
+
+.limor-empathy-section .limor-copy p,
+.limor-included-section .limor-copy p,
+.limor-testimonials-section .limor-copy p {
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.limor-point-list,
+.limor-included-list,
+.limor-faq-list {
+  display: grid;
+  gap: 14px;
+}
+
+.limor-point,
+.limor-included-list div {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.07);
+  color: white;
+  line-height: 1.7;
+  font-weight: 850;
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease;
+}
+
+.limor-point:hover,
+.limor-included-list div:hover {
+  transform: translateY(-3px);
+  border-color: rgba(142, 217, 196, 0.38);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.limor-point svg,
+.limor-included-list svg {
+  flex: 0 0 auto;
+  margin-top: 4px;
+  color: var(--limor-mint);
+}
+
+.limor-light-section,
+.limor-process-section,
+.limor-fit-section,
+.limor-faq-section {
+  padding: clamp(76px, 11vw, 132px) clamp(18px, 4vw, 56px);
+  background: var(--limor-cream);
+  color: var(--limor-ink);
+}
+
+.limor-light-section {
+  background:
+    radial-gradient(circle at 18% 10%, rgba(142, 217, 196, 0.24), transparent 26%),
+    var(--limor-cream);
+}
+
+.limor-card-grid,
+.limor-testimonial-grid {
+  width: min(1120px, 100%);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 48px auto 0;
+}
+
+.limor-card,
+.limor-process-card,
+.limor-fit-card,
+.limor-testimonial {
+  border: 1px solid rgba(59, 29, 52, 0.12);
+  border-radius: 20px;
+  padding: clamp(22px, 3vw, 30px);
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow: 0 18px 44px rgba(59, 29, 52, 0.06);
+  transition:
+    transform 190ms ease,
+    box-shadow 190ms ease,
+    border-color 190ms ease;
+}
+
+.limor-card:hover,
+.limor-process-card:hover,
+.limor-fit-card:hover,
+.limor-testimonial:hover {
+  transform: translateY(-6px);
+  border-color: rgba(223, 106, 145, 0.28);
+  box-shadow: 0 26px 54px rgba(59, 29, 52, 0.1);
+}
+
+.limor-card-number {
+  color: var(--limor-pink);
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.limor-card h3,
+.limor-process-card h3,
+.limor-fit-card h3 {
+  margin-top: 18px;
+  color: var(--limor-plum);
+  font-size: 1.35rem;
+}
+
+.limor-card p,
+.limor-process-card p {
+  margin-top: 12px;
+  color: var(--limor-muted);
+  line-height: 1.72;
+  font-weight: 750;
+}
+
+.limor-process-section {
+  background:
+    linear-gradient(180deg, var(--limor-paper), var(--limor-cream));
+}
+
+.limor-process-grid {
+  width: min(1120px, 100%);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin: 48px auto 0;
+}
+
+.limor-process-card {
+  position: relative;
+  min-height: 286px;
+}
+
+.limor-process-card > span {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  color: rgba(59, 29, 52, 0.15);
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.limor-process-card svg {
+  color: var(--limor-pink);
+}
+
+.limor-included-section {
+  background:
+    radial-gradient(circle at 86% 8%, rgba(142, 217, 196, 0.24), transparent 28%),
+    linear-gradient(135deg, var(--limor-plum), #2b1730);
+}
+
+.limor-fit-section {
+  background: var(--limor-paper);
+}
+
+.limor-fit-grid {
+  width: min(980px, 100%);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 48px auto 0;
+}
+
+.limor-fit-card {
+  display: grid;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.66);
+}
+
+.limor-fit-card div {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--limor-muted);
+  font-weight: 820;
+  line-height: 1.65;
+}
+
+.limor-fit-card.good svg {
+  color: #399c79;
+}
+
+.limor-fit-card.bad svg {
+  color: var(--limor-pink);
+}
+
+.limor-testimonials-section {
+  padding: clamp(76px, 11vw, 132px) clamp(18px, 4vw, 56px);
+  background:
+    radial-gradient(circle at 12% 10%, rgba(223, 106, 145, 0.24), transparent 30%),
+    var(--limor-plum);
+  color: white;
+}
+
+.limor-testimonial {
+  display: flex;
+  min-height: 280px;
+  flex-direction: column;
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+
+.limor-stars {
+  display: flex;
+  gap: 4px;
+  color: #ffd16a;
+}
+
+.limor-testimonial p {
+  margin-top: 22px;
+  color: rgba(255, 255, 255, 0.74);
+  line-height: 1.75;
+  font-weight: 750;
+}
+
+.limor-testimonial strong {
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+.limor-faq-section {
+  background: var(--limor-cream);
+}
+
+.limor-faq-list {
+  width: min(860px, 100%);
+  margin: 48px auto 0;
+}
+
+.limor-faq-list details {
+  border: 1px solid rgba(59, 29, 52, 0.12);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow: 0 14px 34px rgba(59, 29, 52, 0.05);
+}
+
+.limor-faq-list details[open] {
+  border-color: rgba(223, 106, 145, 0.32);
+}
+
+.limor-faq-list summary {
+  cursor: pointer;
+  padding: 20px 22px;
+  color: var(--limor-plum);
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+
+.limor-faq-list details p {
+  padding: 0 22px 22px;
+  color: var(--limor-muted);
+  line-height: 1.7;
+  font-weight: 750;
+}
+
+.limor-final {
+  padding: clamp(76px, 11vw, 132px) clamp(18px, 4vw, 56px);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.28), transparent 34%),
+    linear-gradient(135deg, var(--limor-pink), var(--limor-coral));
+  color: white;
+  text-align: center;
+}
+
+.limor-final svg {
+  margin: 0 auto 18px;
+}
+
+.limor-final h2 {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.limor-final-button {
+  min-height: 60px;
+  width: min(380px, 100%);
+  margin-top: 30px;
+  border-radius: 999px;
+  background: var(--limor-plum);
+  color: white;
+  font-weight: 900;
+  box-shadow: 0 18px 36px rgba(59, 29, 52, 0.18);
+}
+
+.limor-floating-cta {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 20;
+  min-height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 999px;
+  padding: 0 18px;
+  background: rgba(59, 29, 52, 0.82);
+  color: white;
+  font-weight: 900;
+  box-shadow: 0 14px 32px rgba(59, 29, 52, 0.2);
+  backdrop-filter: blur(14px);
+  animation: limorFloat 3.4s ease-in-out infinite;
+}
+
+@keyframes limorButtonLift {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes limorFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@media (max-width: 1040px) {
+  .limor-process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 880px) {
+  .limor-nav-links {
+    display: none;
+  }
+
+  .limor-empathy-section,
+  .limor-included-section,
+  .limor-card-grid,
+  .limor-process-grid,
+  .limor-fit-grid,
+  .limor-testimonial-grid,
+  .limor-proof {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 540px) {
+  .limor-hero {
+    padding-top: 28px;
+  }
+
+  .limor-hero-inner {
+    margin-top: 54px;
+  }
+
+  .limor-page h1 {
+    font-size: clamp(2.75rem, 13vw, 4.45rem);
+  }
+
+  .limor-subtitle {
+    font-size: 1.05rem;
+  }
+
+  .limor-hero-actions {
+    margin-top: 24px;
+  }
+
+  .limor-hero-main-cta,
+  .limor-hero-secondary {
+    width: 100%;
+  }
+
+  .limor-video-strip {
+    width: calc(100% - 20px);
+  }
+
+  .limor-floating-cta {
+    display: none;
+  }
+}

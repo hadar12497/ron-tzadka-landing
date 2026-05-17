@@ -7,6 +7,7 @@ type ContactPayload = {
   phone?: string;
   email?: string;
   goal?: string;
+  source?: string;
 };
 
 function clean(value: unknown) {
@@ -35,6 +36,7 @@ export async function POST(request: Request) {
   const phone = clean(payload.phone);
   const email = clean(payload.email);
   const goal = clean(payload.goal);
+  const source = clean(payload.source) || "האתר";
 
   if (name.length < 2) {
     return NextResponse.json({ message: "צריך שם מלא כדי לחזור אליך בצורה מסודרת." }, { status: 400 });
@@ -50,7 +52,7 @@ export async function POST(request: Request) {
 
   const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.CONTACT_TO_EMAIL;
-  const from = process.env.CONTACT_FROM_EMAIL ?? "Ron Tzadka <onboarding@resend.dev>";
+  const from = process.env.CONTACT_FROM_EMAIL ?? "Fitness Landing <onboarding@resend.dev>";
 
   if (!apiKey || !to) {
     return NextResponse.json(
@@ -64,7 +66,7 @@ export async function POST(request: Request) {
 
   const html = `
     <div dir="rtl" style="font-family: Arial, sans-serif; line-height: 1.7; color: #171412;">
-      <h2>ליד חדש מהאתר של רון צדקה</h2>
+      <h2>ליד חדש מ-${escapeHtml(source)}</h2>
       <p><strong>שם:</strong> ${escapeHtml(name)}</p>
       <p><strong>טלפון:</strong> ${escapeHtml(phone)}</p>
       <p><strong>אימייל:</strong> ${email ? escapeHtml(email) : "לא הוזן"}</p>
@@ -82,7 +84,7 @@ export async function POST(request: Request) {
     body: JSON.stringify({
       from,
       to,
-      subject: `ליד חדש לרון צדקה מ-${name}`,
+      subject: `ליד חדש מ-${source}: ${name}`,
       html,
       reply_to: email || undefined,
     }),

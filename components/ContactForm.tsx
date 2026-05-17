@@ -5,7 +5,21 @@ import { FormEvent, useState } from "react";
 
 type SubmitState = "idle" | "sending" | "success" | "error";
 
-export function ContactForm() {
+type ContactFormProps = {
+  source?: string;
+  privacyText?: string;
+  goalPlaceholder?: string;
+  submitLabel?: string;
+  idleMessage?: string;
+};
+
+export function ContactForm({
+  source = "רון צדקה",
+  privacyText = "קראתי ואני מאשר/ת שמותר לרון או לצוות לחזור אליי לגבי שיחת התאמה.",
+  goalPlaceholder = "לדוגמה: ירידה במשקל, חיטוב, כוח או חזרה לשגרה.",
+  submitLabel = "שליחת פרטים",
+  idleMessage = "הפרטים נשלחים לבדיקה ראשונית בלבד. אין התחייבות להתחיל תהליך.",
+}: ContactFormProps) {
   const [state, setState] = useState<SubmitState>("idle");
   const [message, setMessage] = useState("");
 
@@ -20,6 +34,7 @@ export function ContactForm() {
       phone: String(form.get("phone") ?? ""),
       email: String(form.get("email") ?? ""),
       goal: String(form.get("goal") ?? ""),
+      source,
     };
 
     try {
@@ -66,20 +81,20 @@ export function ContactForm() {
         <textarea
           name="goal"
           rows={4}
-          placeholder="לדוגמה: ירידה במשקל, חיטוב, כוח או חזרה לשגרה."
+          placeholder={goalPlaceholder}
         />
       </label>
       <label className="privacy-check">
         <input name="privacy" type="checkbox" required />
-        <span>קראתי ואני מאשר/ת שמותר לרון או לצוות לחזור אליי לגבי שיחת התאמה.</span>
+        <span>{privacyText}</span>
       </label>
       <button className="primary-button light form-submit" type="submit" disabled={state === "sending"}>
         {state === "sending" ? <Loader2 className="spin" size={18} aria-hidden="true" /> : <Send size={18} aria-hidden="true" />}
-        {state === "sending" ? "שולח..." : "שליחת פרטים"}
+        {state === "sending" ? "שולח..." : submitLabel}
         <ArrowLeft size={18} aria-hidden="true" />
       </button>
       <p className={`form-status ${state === "success" ? "success" : state === "error" ? "error" : ""}`} aria-live="polite">
-        {message || "הפרטים נשלחים לבדיקה ראשונית בלבד. אין התחייבות להתחיל תהליך."}
+        {message || idleMessage}
       </p>
     </form>
   );
