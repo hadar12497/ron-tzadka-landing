@@ -26,8 +26,8 @@ export const metadata: Metadata = {
 const videoEmbedUrl = process.env.NEXT_PUBLIC_LIMOR_VIDEO_URL;
 
 const heroProof = [
-  { label: "מחזור חדש מתחיל ב-25/5", icon: BadgeCheck },
-  { label: "ימי שני בערב במבשרת ציון", icon: Zap },
+  { label: "מחזור חדש נפתח בקרוב", icon: BadgeCheck },
+  { label: "סדנה פרונטלית לנשים", icon: Zap },
   { label: "לנשים בכל הגילאים", icon: Heart },
 ];
 
@@ -57,7 +57,7 @@ const processSteps = [
   {
     icon: MessageCircle,
     title: "משאירות פרטים",
-    text: "את משאירה פרטים להרשמה למחזור הקרוב, ולימור חוזרת אלייך עם כל הפרטים החשובים.",
+    text: "את משאירה פרטים להרשמה, ולימור חוזרת אלייך עם כל הפרטים החשובים על המחזור הקרוב.",
   },
   {
     icon: ShieldCheck,
@@ -115,8 +115,8 @@ const testimonials = [
 
 const faqs = [
   {
-    question: "מתי הסדנה מתחילה?",
-    answer: "המחזור הקרוב מתחיל ב-25/5 ומתקיים בימי שני בערב במבשרת ציון.",
+    question: "מתי הסדנה מתקיימת?",
+    answer: "השאירי פרטים ולימור תחזור אלייך עם התאריך, השעות והמיקום של המחזור הקרוב.",
   },
   {
     question: "מה כוללת הסדנה?",
@@ -184,7 +184,7 @@ export default function LimorPage() {
         <div className="limor-hero-inner">
           <Reveal className="limor-pill">
             <Heart size={16} aria-hidden="true" />
-            מחזור חדש מתחיל ב-25/5
+            מחזור חדש נפתח בקרוב
           </Reveal>
           <Reveal delay={0.08}>
             <h1>השינוי אפשרי. בכל גיל.</h1>
@@ -223,13 +223,13 @@ export default function LimorPage() {
       <section className="limor-contact-section" id="contact">
         <Reveal className="limor-contact-card">
           <span className="limor-label dark">הרשמה למחזור הקרוב</span>
-          <h2>רוצה להצטרף לסדנה שמתחילה ב-25/5?</h2>
+          <h2>רוצה להצטרף למחזור הקרוב של הסדנה?</h2>
           <p>השאירי פרטים ולימור תחזור אלייך עם כל הפרטים על הסדנה, המקום, השעות וההרשמה.</p>
           <ContactForm
             source="סדנת ירידה במשקל - לימור בנימין"
             privacyText="קראתי ואני מאשר/ת שמותר ללימור או לצוות לחזור אליי לגבי הרשמה לסדנה."
             goalLabel="מה חשוב לך בסדנה?"
-            goalPlaceholder="לדוגמה: אני רוצה לרדת במשקל, לקבל מסגרת, להבין תפריטים או להצטרף למחזור הקרוב."
+            goalPlaceholder="לדוגמה: אני רוצה לרדת במשקל, לקבל מסגרת, להבין תפריטים או לקבל פרטים על המחזור הקרוב."
             submitLabel="השארת פרטים להרשמה"
             idleMessage="הפרטים נשלחים ללימור לצורך חזרה עם פרטי הסדנה וההרשמה."
           />
@@ -373,7 +373,7 @@ export default function LimorPage() {
       <section className="limor-final">
         <Reveal>
           <Users size={34} aria-hidden="true" />
-          <h2>אם את רוצה להצטרף למחזור הקרוב שמתחיל ב-25/5, השאירי פרטים עכשיו.</h2>
+          <h2>אם את רוצה להצטרף למחזור הקרוב, השאירי פרטים ולימור תחזור אלייך.</h2>
           <a className="limor-final-button" href="#contact">
             השארת פרטים להרשמה
             <ArrowLeft size={18} aria-hidden="true" />
