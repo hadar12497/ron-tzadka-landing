@@ -8,6 +8,7 @@ type SubmitState = "idle" | "sending" | "success" | "error";
 type ContactFormProps = {
   source?: string;
   privacyText?: string;
+  goalLabel?: string;
   goalPlaceholder?: string;
   submitLabel?: string;
   idleMessage?: string;
@@ -16,6 +17,7 @@ type ContactFormProps = {
 export function ContactForm({
   source = "רון צדקה",
   privacyText = "קראתי ואני מאשר/ת שמותר לרון או לצוות לחזור אליי לגבי שיחת התאמה.",
+  goalLabel = "מה המטרה שלך?",
   goalPlaceholder = "לדוגמה: ירידה במשקל, חיטוב, כוח או חזרה לשגרה.",
   submitLabel = "שליחת פרטים",
   idleMessage = "הפרטים נשלחים לבדיקה ראשונית בלבד. אין התחייבות להתחיל תהליך.",
@@ -77,7 +79,7 @@ export function ContactForm({
         <input name="email" type="email" autoComplete="email" placeholder="name@email.com" />
       </label>
       <label>
-        מה המטרה שלך?
+        {goalLabel}
         <textarea
           name="goal"
           rows={4}
