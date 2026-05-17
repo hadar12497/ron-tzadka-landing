@@ -1,7 +1,7 @@
 {
-  "name": "apex-form-studio",
+  "name": "ron-tzadka-landing",
   "version": "1.0.0",
-  "description": "Premium 3D fitness studio landing page built with Next.js, Tailwind, and React Three Fiber.",
+  "description": "Client-ready landing page for Ron Tzadka fitness studio.",
   "scripts": {
     "dev": "next dev --webpack",
     "build": "next build --webpack",
@@ -11,13 +11,6 @@
   "keywords": [],
   "author": "",
   "license": "UNLICENSED",
-  "devEngines": {
-    "packageManager": {
-      "name": "pnpm",
-      "version": "^11.1.2",
-      "onFail": "download"
-    }
-  },
   "type": "module",
   "dependencies": {
     "@react-three/drei": "^10.7.7",
@@ -37,7 +30,6 @@
     "@types/three": "^0.184.1",
     "eslint": "^9.39.4",
     "eslint-config-next": "^16.2.6",
-    "lightningcss-darwin-arm64": "^1.32.0",
     "tailwindcss": "^4.3.0",
     "typescript": "^6.0.3"
   }
