@@ -124,7 +124,7 @@ const faqs = [
   },
   {
     question: "זה מתאים לנערות?",
-    answer: "לפי מידע גלוי שמצאתי, ללימור יש פעילות אימוני כוח לנערות בגילאי 12-15. בדף עצמו אפשר להתאים את הניסוח לקהל המדויק שהיא רוצה.",
+    answer: "???",
   },
   {
     question: "צריך ניסיון קודם?",
@@ -237,7 +237,6 @@ export default function LimorPage() {
 
       <section className="limor-empathy-section">
         <Reveal className="limor-copy">
-          <span className="limor-label">הבעיה היא לא את</span>
           <h2>אימון טוב לא אמור להרגיש כמו עונש.</h2>
           <p>
             הרבה נשים ונערות רוצות להתחזק, אבל פוגשות תוכניות קשוחות מדי, שפה שיפוטית מדי או אימונים שלא מסבירים איך
