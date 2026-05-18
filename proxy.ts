@@ -5,6 +5,11 @@ const limorDomains = new Set([
   "limor-tzadka-landing.vercel.app",
 ]);
 
+const ariellaDomains = new Set([
+  "ariella-berkus-fitness.vercel.app",
+  "fit-with-ariella.vercel.app",
+]);
+
 export function proxy(request: NextRequest) {
   const host = request.headers.get("host")?.split(":")[0] ?? "";
   const { pathname } = request.nextUrl;
@@ -12,6 +17,12 @@ export function proxy(request: NextRequest) {
   if (limorDomains.has(host) && pathname === "/") {
     const url = request.nextUrl.clone();
     url.pathname = "/limor";
+    return NextResponse.rewrite(url);
+  }
+
+  if (ariellaDomains.has(host) && pathname === "/") {
+    const url = request.nextUrl.clone();
+    url.pathname = "/ariella";
     return NextResponse.rewrite(url);
   }
 
